@@ -1,7 +1,7 @@
 ## JombloTV
 Tugas sumbission Dicoding Fron-End Developer Fundamental, belajar membuat page dengan webpack dan menerapkan API.
 
-[Demo Video]()
+[Demo Video](https://drive.google.com/file/d/1zfLQgPfTPFwSbjGR_Z3aLDaO9c56iqeH/view?usp=sharing)
 
 ## Source API
 https://www.themoviedb.org/
