@@ -3,6 +3,9 @@ Tugas sumbission Dicoding Fron-End Developer Fundamental, belajar membuat page d
 
 [Demo Video]()
 
+## Source API
+https://www.themoviedb.org/
+
 ## Instalasi
 Silakan untuk menginstall dependencies dengan mengetikan perintah ``npm install`` atau ``yarn install``. Tergantung dari package manager yang digunakan.
 
