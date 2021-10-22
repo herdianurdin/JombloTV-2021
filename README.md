@@ -20,4 +20,4 @@ yarn build
 ```
 
 ## Screenshoot
-![Jomblo](https://cdn.statically.io/gh/Herdianurdin/JombloTV/main/jomblo.png)
+![Jomblo](https://cdn.statically.io/gh/Herdianurdin/JombloTV-2021/main/jomblo.png)
