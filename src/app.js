@@ -1,5 +1,5 @@
 import 'regenerator-runtime'
-import './style/main.css'
 import main from './script/view/main.js'
+import './style/main.css'
 
 document.addEventListener('DOMContentLoaded', main)

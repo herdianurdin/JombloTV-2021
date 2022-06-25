@@ -1,35 +1,35 @@
 class SearchBar extends HTMLElement {
-    constructor() {
-        super()
-        this.shadowDOM = this.attachShadow({
-            mode: 'open',
-        })
-    }
+  constructor() {
+    super()
+    this.shadowDOM = this.attachShadow({
+      mode: 'open',
+    })
+  }
 
-    connectedCallback() {
-        this.render()
-    }
+  connectedCallback() {
+    this.render()
+  }
 
-    set clickEvent(event) {
-        this._clickEvent = event
-        this.render()
-    }
+  set clickEvent(event) {
+    this._clickEvent = event
+    this.render()
+  }
 
-    set keyUpEvent(event) {
-        this._keyUpEvent = event
-        this.render()
-    }
+  set keyUpEvent(event) {
+    this._keyUpEvent = event
+    this.render()
+  }
 
-    get keyword() {
-        return this.shadowDOM.querySelector('input').value
-    }
+  get keyword() {
+    return this.shadowDOM.querySelector('input').value
+  }
 
-    removeKeyword() {
-        this.shadowDOM.querySelector('input').value = ''
-    }
+  removeKeyword() {
+    this.shadowDOM.querySelector('input').value = ''
+  }
 
-    render() {
-        this.shadowDOM.innerHTML = `
+  render() {
+    this.shadowDOM.innerHTML = `
         <style>
         * {
             margin: 0;
@@ -90,9 +90,13 @@ class SearchBar extends HTMLElement {
             </button>
         </div>`
 
-        this.shadowDOM.querySelector('#search-submit').addEventListener('click', this._clickEvent)
-        this.shadowDOM.querySelector('input').addEventListener('keyup', this._keyUpEvent)
-    }
+    this.shadowDOM
+      .querySelector('#search-submit')
+      .addEventListener('click', this._clickEvent)
+    this.shadowDOM
+      .querySelector('input')
+      .addEventListener('keyup', this._keyUpEvent)
+  }
 }
 
 customElements.define('search-bar', SearchBar)

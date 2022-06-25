@@ -1,36 +1,36 @@
 class NavBar extends HTMLElement {
-    constructor() {
-        super()
-        this.shadowDOM = this.attachShadow({
-            mode: 'open',
-        })
-    }
+  constructor() {
+    super()
+    this.shadowDOM = this.attachShadow({
+      mode: 'open',
+    })
+  }
 
-    connectedCallback() {
-        this.render()
-    }
+  connectedCallback() {
+    this.render()
+  }
 
-    set clickEvent(event) {
-        this._clickEvent = event
-        this.render()
-    }
+  set clickEvent(event) {
+    this._clickEvent = event
+    this.render()
+  }
 
-    get value() {
-        return this.shadowDOM.querySelector('.active').id
-    }
+  get value() {
+    return this.shadowDOM.querySelector('.active').id
+  }
 
-    hideNavBar() {
-        this.shadowDOM.querySelector('nav').classList.toggle('hide')
-    }
+  hideNavBar() {
+    this.shadowDOM.querySelector('nav').classList.toggle('hide')
+  }
 
-    removeNavActive() {
-        if (this.shadowDOM.querySelector('.active')) {
-            this.shadowDOM.querySelector('.active').classList.remove('active')
-        }
+  removeNavActive() {
+    if (this.shadowDOM.querySelector('.active')) {
+      this.shadowDOM.querySelector('.active').classList.remove('active')
     }
+  }
 
-    render() {
-        this.shadowDOM.innerHTML = `
+  render() {
+    this.shadowDOM.innerHTML = `
         <style>
         * {
             margin: 0;
@@ -102,16 +102,16 @@ class NavBar extends HTMLElement {
             </ul>
         </nav>`
 
-        const navItems = this.shadowDOM.querySelectorAll('li')
-        navItems.forEach((navItem) => {
-            navItem.addEventListener('click', (event) => {
-                this.removeNavActive()
+    const navItems = this.shadowDOM.querySelectorAll('li')
+    navItems.forEach((navItem) => {
+      navItem.addEventListener('click', (event) => {
+        this.removeNavActive()
 
-                event.target.classList.add('active')
-                this.addEventListener('click', this._clickEvent)
-            })
-        })
-    }
+        event.target.classList.add('active')
+        this.addEventListener('click', this._clickEvent)
+      })
+    })
+  }
 }
 
 customElements.define('nav-bar', NavBar)

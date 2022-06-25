@@ -1,22 +1,22 @@
 class AppBar extends HTMLElement {
-    constructor() {
-        super()
-        this.shadowDOM = this.attachShadow({
-            mode: 'open',
-        })
-    }
+  constructor() {
+    super()
+    this.shadowDOM = this.attachShadow({
+      mode: 'open',
+    })
+  }
 
-    connectedCallback() {
-        this.render()
-    }
+  connectedCallback() {
+    this.render()
+  }
 
-    set clickEvent(event) {
-        this._clickEvent = event
-        this.render()
-    }
+  set clickEvent(event) {
+    this._clickEvent = event
+    this.render()
+  }
 
-    render() {
-        this.shadowDOM.innerHTML = `
+  render() {
+    this.shadowDOM.innerHTML = `
         <style>
         * {
             margin: 0;
@@ -78,8 +78,10 @@ class AppBar extends HTMLElement {
             </div>
         </div>`
 
-        this.shadowDOM.querySelector('#app-menu svg').addEventListener('click', this._clickEvent)
-    }
+    this.shadowDOM
+      .querySelector('#app-menu svg')
+      .addEventListener('click', this._clickEvent)
+  }
 }
 
 customElements.define('app-bar', AppBar)

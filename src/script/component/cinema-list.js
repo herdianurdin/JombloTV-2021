@@ -1,21 +1,21 @@
-import './cinema-item.js'
 import './cinema-detail.js'
+import './cinema-item.js'
 
 class CinemaList extends HTMLElement {
-    constructor() {
-        super()
-        this.shadowDOM = this.attachShadow({
-            mode: 'open',
-        })
-    }
+  constructor() {
+    super()
+    this.shadowDOM = this.attachShadow({
+      mode: 'open',
+    })
+  }
 
-    set cinemas(cinemas) {
-        this._cinemas = cinemas
-        this.render()
-    }
+  set cinemas(cinemas) {
+    this._cinemas = cinemas
+    this.render()
+  }
 
-    render() {
-        this.shadowDOM.innerHTML = `
+  render() {
+    this.shadowDOM.innerHTML = `
         <style>
         * {
             margin: 0;
@@ -33,29 +33,31 @@ class CinemaList extends HTMLElement {
         }
         </style>`
 
-        this._cinemas.forEach((cinema) => {
-            const cinemaItemElement = document.createElement('cinema-item')
+    this._cinemas.forEach((cinema) => {
+      const cinemaItemElement = document.createElement('cinema-item')
 
-            cinemaItemElement.cinema = cinema
-            cinemaItemElement.addEventListener('click', () => {
-                const cinemaItemDetailElement = document.createElement('cinema-detail')
-                const contentList = document.querySelector('#content-list')
-                cinemaItemDetailElement.cinema = cinema
-                cinemaItemDetailElement.clickEvent = () => {
-                    contentList.classList.toggle('hide')
-                    cinemaItemDetailElement.remove()
-                }
+      cinemaItemElement.cinema = cinema
+      cinemaItemElement.addEventListener('click', () => {
+        const cinemaItemDetailElement = document.createElement('cinema-detail')
+        const contentList = document.querySelector('#content-list')
+        cinemaItemDetailElement.cinema = cinema
+        cinemaItemDetailElement.clickEvent = () => {
+          contentList.classList.toggle('hide')
+          cinemaItemDetailElement.remove()
+        }
 
-                contentList.classList.toggle('hide')
-                document.querySelector('#content-detail').append(cinemaItemDetailElement)
-            })
+        contentList.classList.toggle('hide')
+        document
+          .querySelector('#content-detail')
+          .append(cinemaItemDetailElement)
+      })
 
-            this.shadowDOM.appendChild(cinemaItemElement)
-        })
-    }
+      this.shadowDOM.appendChild(cinemaItemElement)
+    })
+  }
 
-    renderError(message) {
-        this.shadowDOM.innerHTML = `
+  renderError(message) {
+    this.shadowDOM.innerHTML = `
             <style>
                 #message {
                     background: #FFF;
@@ -97,7 +99,7 @@ class CinemaList extends HTMLElement {
                 <h2>${message}</h2>
             <div>
         `
-    }
+  }
 }
 
 customElements.define('cinema-list', CinemaList)

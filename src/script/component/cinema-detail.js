@@ -1,29 +1,29 @@
 import NoImage from '../../images/no-image.svg'
 
 class CinemaDetail extends HTMLElement {
-    constructor() {
-        super()
-        this.shadowDOM = this.attachShadow({
-            mode: 'open',
-        })
-    }
+  constructor() {
+    super()
+    this.shadowDOM = this.attachShadow({
+      mode: 'open',
+    })
+  }
 
-    set cinema(cinema) {
-        this._cinema = cinema
-        this.render()
-    }
+  set cinema(cinema) {
+    this._cinema = cinema
+    this.render()
+  }
 
-    set clickEvent(event) {
-        this._clickEvent = event
-        this.render()
-    }
+  set clickEvent(event) {
+    this._clickEvent = event
+    this.render()
+  }
 
-    render() {
-        const posterPath = this._cinema.poster_path
-            ? `https://www.themoviedb.org/t/p/w500/${this._cinema.poster_path}`
-            : `${NoImage}`
+  render() {
+    const posterPath = this._cinema.poster_path
+      ? `https://www.themoviedb.org/t/p/w500/${this._cinema.poster_path}`
+      : `${NoImage}`
 
-        this.shadowDOM.innerHTML = `
+    this.shadowDOM.innerHTML = `
         <style>
         * {
             margin: 0;
@@ -145,8 +145,10 @@ class CinemaDetail extends HTMLElement {
             </div>
         </div>`
 
-        this.shadowDOM.querySelector('#back-button').addEventListener('click', this._clickEvent)
-    }
+    this.shadowDOM
+      .querySelector('#back-button')
+      .addEventListener('click', this._clickEvent)
+  }
 }
 
 customElements.define('cinema-detail', CinemaDetail)
