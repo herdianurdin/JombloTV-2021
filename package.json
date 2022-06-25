@@ -3,7 +3,10 @@
     "version": "1.0.0",
     "description": "submission dicoding",
     "main": "index.js",
+    "homepage": "https://herdianurdin.github.io/JombloTV-2021",
     "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist",
         "start-dev": "webpack serve --config webpack.dev.js",
         "build": "webpack --config webpack.prod.js"
     },
@@ -24,6 +27,7 @@
     },
     "dependencies": {
         "file-loader": "^6.0.0",
+        "gh-pages": "^4.0.0",
         "image-webpack-loader": "^6.0.0",
         "regenerator-runtime": "^0.13.9",
         "resolve-cwd": "^3.0.0",
