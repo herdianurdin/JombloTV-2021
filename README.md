@@ -1,23 +1,45 @@
-## JombloTV
-Tugas sumbission Dicoding Fron-End Developer Fundamental, belajar membuat page dengan webpack dan menerapkan API.
+## About Project
 
-[Demo Video](https://drive.google.com/file/d/1zfLQgPfTPFwSbjGR_Z3aLDaO9c56iqeH/view?usp=sharing)
+![Screenshot](screenshot.webp)
 
-## Source API
-https://www.themoviedb.org/
+This application is the final project of coding Front-End Developer Fundamentals. Which this final project must implement Webpack and Rest API.
 
-## Instalasi
-Silakan untuk menginstall dependencies dengan mengetikan perintah ``npm install`` atau ``yarn install``. Tergantung dari package manager yang digunakan.
+Rest API source of this application comes from [themoviedb](https://www.themoviedb.org/).
 
-Untuk Testing :
-```bash
-yarn start-dev
+[Demo App](https://herdianurdin.github.io/JombloTV-2021/)
+
+## Getting Started
+
+### Requirement
+```sh
+npm install npm@latest -g
 ```
 
-Untuk Build :
-```bash
-yarn build
+### Installation
+1. Clone the repo.
+
+```sh
+git clone https://github.com/herdianurdin/JombloTV-2021.git
 ```
 
-## Screenshoot
-![Jomblo](https://cdn.statically.io/gh/Herdianurdin/JombloTV-2021/main/jss.png)
+2. Install NPM packages.
+
+```sh
+npm install
+```
+
+## Usage
+### Run Project
+
+```sh
+npm run start-dev
+```
+
+### Build Project
+```sh
+npm run build
+```
+
+## License
+
+Distributed under the GPL License. See [LICENSE](LICENSE) for more information.
